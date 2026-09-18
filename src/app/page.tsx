@@ -2,27 +2,27 @@ import Profile from "@/components/Profile";
 import LinkCard from "@/components/LinkCard";
 
 const profile = {
-  name: "김클로",
-  bio: "세계 최강 바이브코더",
-  initial: "김",
+  name: "이나영",
+  bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요",
+  photoUrl: "/profile.png",
 };
 
 const links = [
-  { label: "Github", url: "https://github.com/example" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/example" },
-  { label: "Blog", url: "https://example.com/blog" },
+  { label: "💻 GitHub", url: "https://github.com/NYoungLEE" },
+  { label: "📝 Blog", url: "https://velog.io/@nyoung_lee/posts" },
+  { label: "📫 Email", url: "mailto:skdud0694@gmail.com" },
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-1 items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-black">
-      <main className="flex w-full max-w-sm flex-col items-center gap-8">
+    <div className="flex flex-1 items-center justify-center bg-gradient-to-b from-[#fff8f0] via-[#ffeee0] to-[#ffe2c9] px-6 py-16 dark:from-[#1c1712] dark:via-[#1f1a15] dark:to-[#241d16] sm:py-20">
+      <main className="flex w-full max-w-sm flex-col items-center gap-10">
         <Profile
           name={profile.name}
           bio={profile.bio}
-          initial={profile.initial}
+          photoUrl={profile.photoUrl}
         />
-        <div className="flex w-full flex-col gap-3">
+        <div className="flex w-full flex-col gap-4">
           {links.map((link) => (
             <LinkCard key={link.label} label={link.label} url={link.url} />
           ))}
