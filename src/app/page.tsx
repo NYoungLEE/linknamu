@@ -1,5 +1,5 @@
 import Profile from "@/components/Profile";
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 
 const profile = {
   name: "이나영",
@@ -8,9 +8,13 @@ const profile = {
 };
 
 const links = [
-  { label: "💻 GitHub", url: "https://github.com/NYoungLEE" },
-  { label: "📝 Blog", url: "https://velog.io/@nyoung_lee/posts" },
-  { label: "📫 Email", url: "mailto:skdud0694@gmail.com" },
+  { id: "github", label: "💻 GitHub", url: "https://github.com/NYoungLEE" },
+  {
+    id: "blog",
+    label: "📝 Blog",
+    url: "https://velog.io/@nyoung_lee/posts",
+  },
+  { id: "email", label: "📫 Email", url: "mailto:skdud0694@gmail.com" },
 ];
 
 export default function Home() {
@@ -22,11 +26,7 @@ export default function Home() {
           bio={profile.bio}
           photoUrl={profile.photoUrl}
         />
-        <div className="flex w-full flex-col gap-4">
-          {links.map((link) => (
-            <LinkCard key={link.label} label={link.label} url={link.url} />
-          ))}
-        </div>
+        <LinkList links={links} />
       </main>
     </div>
   );
